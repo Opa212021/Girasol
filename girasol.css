@@ -93,7 +93,9 @@ body {
     opacity: 1;
   }
 }
-
+p {
+  font-size: 25px;
+}
 @keyframes sway {
   0% { transform: scale(1) rotate(-2deg); }
   50% { transform: scale(1) rotate(2deg); }
