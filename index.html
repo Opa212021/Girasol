@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Girasol animado</title>
+  <style>
+    /* Aquí va el CSS (siguiente bloque) */
+  </style>
+  <link rel="stylesheet" href="girasol.css">
+</head>
+<body>
+  <h1>Un pequeño detallito</h1><br><p>si le das clic hay una animación!</p>
+  |
+  <br>
+  |
+  <br>
+  <br>
+
+  <div class="sunflower" id="sunflower">
+  <div class="petal" style="--angle: 0deg;"></div>
+  <div class="petal" style="--angle: 30deg;"></div>
+  <div class="petal" style="--angle: 60deg;"></div>
+  <div class="petal" style="--angle: 90deg;"></div>
+  <div class="petal" style="--angle: 120deg;"></div>
+  <div class="petal" style="--angle: 150deg;"></div>
+  <div class="petal" style="--angle: 180deg;"></div>
+  <div class="petal" style="--angle: 210deg;"></div>
+  <div class="petal" style="--angle: 240deg;"></div>
+  <div class="petal" style="--angle: 270deg;"></div>
+  <div class="petal" style="--angle: 300deg;"></div>
+  <div class="petal" style="--angle: 330deg;"></div>
+  <div class="center"></div>
+  
+</div>
+<p>Es un girasol para la señorita que se merece un jardín lleno de estos, ¡love you!</p>
+
+
+  <script>
+  const sunflower = document.getElementById('sunflower');
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      sunflower.classList.add('bloom');
+    }, 300);
+  });
+
+  sunflower.addEventListener('click', () => {
+    sunflower.classList.remove('bloom');
+    void sunflower.offsetWidth;
+    sunflower.classList.add('bloom');
+  });
+</script>
+  </script>
+</body>
+</html>

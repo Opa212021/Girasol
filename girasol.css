@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at top, #9be7ff, #ffffff 70%);
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.sunflower {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  transform: scale(0.2);
+  opacity: 0;
+}
+
+.sunflower.bloom {
+  animation: bloom 1.4s ease-out forwards, sway 4s ease-in-out 1.4s infinite;
+}
+
+.petal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72px;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffd54f, #f9a825);
+  border-radius: 50% 50% 42% 42%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotate(var(--angle)) scale(0.25);
+  opacity: 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.18);
+}
+
+.sunflower.bloom .petal {
+  animation: petalOpen 1s ease-out forwards;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%) scale(0.4);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #6d4c41, #3e2723 75%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+}
+
+.sunflower.bloom .center {
+  animation: centerPop 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes bloom {
+  0% {
+    transform: scale(0.2) rotate(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes petalOpen {
+  0% {
+    transform: translate(-50%, -100%) rotate(var(--angle)) scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -100%) rotate(var(--angle)) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes centerPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0% { transform: scale(1) rotate(-2deg); }
+  50% { transform: scale(1) rotate(2deg); }
+  100% { transform: scale(1) rotate(-2deg); }
+}
