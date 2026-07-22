@@ -99,10 +99,14 @@ body {
   }
 }
 p {
-  font-size: 50px;
-#p2 {
-  font-size: 35px;
+  font-size: 25px;
+  margin-right: 50px;
+  margin-left: 50px;
+
 }
+
+h1{
+  text-align: center;
 }
 @keyframes sway {
   0% { transform: scale(1) rotate(-2deg); }
