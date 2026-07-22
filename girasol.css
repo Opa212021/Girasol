@@ -8,6 +8,7 @@ body {
   background: radial-gradient(circle at top, #9be7ff, #ffffff 70%);
   font-family: system-ui, sans-serif;
   overflow: hidden;
+  width: 400px;
 }
 
 .sunflower {
